@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>₱5,000 Ipon Challenge</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Canvas Confetti for Celebration -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Google Fonts: Quicksand -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        quicksand: ['Quicksand', 'sans-serif'],
+                    },
+                    colors: {
+                        lavender: {
+                            50: '#f9f5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #faf5ff;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f3e8ff;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c084fc;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a855f7;
+        }
+    </style>
+</head>
+<body class="min-h-full flex flex-col items-center justify-start py-6 px-4 sm:px-6 lg:px-8 text-lavender-900">
+
+    <div class="w-full max-w-4xl bg-white rounded-3xl shadow-2xl border-4 border-lavender-200 overflow-hidden relative transition-all duration-300">
+        
+        <!-- Decorative Background Sparkles & Hearts -->
+        <div class="absolute top-4 left-6 text-lavender-400 text-xl select-none pointer-events-none animate-pulse">✨</div>
+        <div class="absolute top-24 left-2 text-lavender-300 text-lg select-none pointer-events-none">💜</div>
+        <div class="absolute top-12 right-36 text-lavender-400 text-xl select-none pointer-events-none">✨</div>
+        <div class="absolute top-6 right-2 text-lavender-300 text-xl select-none pointer-events-none">💖</div>
+
+        <header class="pt-8 pb-6 px-6 text-center relative bg-gradient-to-b from-lavender-50 to-white">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <!-- Left Title & Subtitle Banner Area -->
+                <div class="flex-1 text-center md:text-left">
+                    <div class="inline-block relative">
+                        <!-- Ribbon Background Effect -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-lavender-600 to-purple-600 rounded-lg blur-sm opacity-30"></div>
+                        <h1 class="relative text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-lavender-900 drop-shadow-sm uppercase py-2">
+                            Ipon Challenge
+                        </h1>
+                    </div>
+                    
+                    <div class="mt-2 inline-block bg-lavender-600 text-white font-bold px-6 py-1.5 rounded-full shadow-md text-sm sm:text-base transform -rotate-1">
+                        Save ₱50 at a time
+                    </div>
+                    
+                    <p class="mt-3 text-lavender-700 font-medium text-sm sm:text-base italic">
+                        "Little by little, a lot becomes a lot." 💜
+                    </p>
+                </div>
+
+                <!-- Right Side: Cute Savings Jar SVG Illustration -->
+                <div class="flex flex-col items-center justify-center bg-lavender-100/60 p-4 rounded-2xl border-2 border-lavender-200 shadow-inner">
+                    <div class="w-28 h-36 relative flex items-center justify-center">
+                        <svg viewBox="0 0 120 150" class="w-full h-full drop-shadow-md">
+                            <!-- Jar Lid -->
+                            <rect x="35" y="10" width="50" height="15" rx="5" fill="#7e22ce" />
+                            <path d="M 30 25 L 90 25 L 95 35 L 25 35 Z" fill="#9333ea" />
+                            <!-- Bow on lid -->
+                            <path d="M 85 20 Q 95 10 100 20 Q 95 30 85 20" fill="#c084fc" />
+                            <circle cx="85" cy="20" r="4" fill="#6b21a8" />
+                            <!-- Jar Body -->
+                            <path d="M 30 40 Q 20 45 20 60 L 20 135 Q 20 145 35 145 L 85 145 Q 100 145 100 135 L 100 60 Q 100 45 90 40 Z" fill="rgba(233, 213, 255, 0.4)" stroke="#9333ea" stroke-width="3" />
+                            <!-- Jar Neck Highlight -->
+                            <path d="M 30 40 L 90 40" stroke="#7e22ce" stroke-width="2" />
+                            <path d="M 35 50 Q 60 48 85 50" stroke="white" stroke-width="2" fill="none" opacity="0.6" />
+                            <!-- Glass shine effect -->
+                            <path d="M 27 60 Q 25 90 29 120" stroke="white" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7" />
+                            <!-- Goal Text inside Jar -->
+                            <text x="60" y="80" font-family="Quicksand" font-weight="700" font-size="10" fill="#6b21a8" text-anchor="middle">GOAL:</text>
+                            <text x="60" y="98" font-family="Quicksand" font-weight="800" font-size="13" fill="#7e22ce" text-anchor="middle">₱5,000</text>
+                            <!-- Heart icon inside jar -->
+                            <path d="M 60 115 C 60 110, 53 108, 50 112 C 47 116, 54 123, 60 128 C 66 123, 73 116, 70 112 C 67 108, 60 110, 60 115 Z" fill="#ec4899" opacity="0.8" />
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <section class="px-6 py-4 bg-lavender-50/50 border-t border-b border-lavender-100">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                
+                <!-- Stat 1: Total Savings Display -->
+                <div class="bg-white p-4 rounded-2xl border-2 border-lavender-200 shadow-sm flex items-center justify-between">
+                    <div>
+                        <p class="text-xs uppercase tracking-wider font-bold text-lavender-500">Total Savings</p>
+                        <p id="total-savings-text" class="text-2xl font-extrabold text-lavender-900 mt-0.5">₱0</p>
+                    </div>
+                    <div class="w-12 h-12 bg-lavender-100 rounded-xl flex items-center justify-center text-lavender-600 text-xl font-bold">
+                        💰
+                    </div>
+                </div>
+
+                <!-- Stat 2: Progress Percentage & Bar -->
+                <div class="bg-white p-4 rounded-2xl border-2 border-lavender-200 shadow-sm">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-xs uppercase tracking-wider font-bold text-lavender-500">Progress (<span id="checked-count">0</span>/100 slots)</span>
+                        <span id="progress-percentage" class="text-sm font-extrabold text-lavender-700">0%</span>
+                    </div>
+                    <div class="w-full bg-lavender-100 rounded-full h-3.5 overflow-hidden p-0.5 border border-lavender-200">
+                        <div id="progress-bar-fill" class="bg-gradient-to-r from-lavender-500 to-purple-600 h-full rounded-full transition-all duration-500 w-0"></div>
+                    </div>
+                </div>
+
+                <!-- Stat 3: Quick Action & Reset -->
+                <div class="bg-white p-4 rounded-2xl border-2 border-lavender-200 shadow-sm flex items-center justify-between gap-3">
+                    <div class="text-left">
+                        <p class="text-xs uppercase tracking-wider font-bold text-lavender-500">Quick Actions</p>
+                        <div class="flex gap-2 mt-1">
+                            <button id="mark-all-btn" class="text-xs bg-lavender-100 hover:bg-lavender-200 text-lavender-700 font-bold px-3 py-1.5 rounded-lg transition">
+                                Fill All
+                            </button>
+                            <button id="reset-btn" class="text-xs bg-red-50 hover:bg-red-100 text-red-600 font-bold px-3 py-1.5 rounded-lg transition">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-xl">
+                        🎯
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <main class="p-6 sm:p-8">
+            <div class="text-center mb-4">
+                <h2 class="text-lg font-bold text-lavender-800">Tap a circle whenever you save ₱50!</h2>
+                <p class="text-xs text-lavender-500">Each circle represents one ₱50 deposit towards your ₱5,000 goal.</p>
+            </div>
+
+            <!-- 10x10 Grid Container -->
+            <div id="grid-container" class="grid grid-cols-5 sm:grid-cols-10 gap-2.5 sm:gap-3 max-w-3xl mx-auto py-2">
+                <!-- JavaScript will generate the 100 circles here -->
+            </div>
+        </main>
+
+        <footer class="bg-lavender-50/80 border-t border-lavender-200 p-6 sm:p-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                
+                <!-- Left: Motivational Box -->
+                <div class="bg-white p-4 rounded-2xl border-2 border-lavender-200 text-center shadow-sm relative overflow-hidden">
+                    <div class="absolute -top-3 -right-3 text-lavender-200 text-4xl select-none">💜</div>
+                    <p class="text-xs font-bold uppercase tracking-wider text-lavender-400">Encouragement</p>
+                    <p class="text-lg font-extrabold text-lavender-800 mt-1 flex items-center justify-center gap-1">
+                        <span>✨</span> You can do it! <span>✨</span>
+                    </p>
+                    <p id="completion-status-text" class="text-xs font-medium text-lavender-600 mt-1">Every peso saved is a step closer to your dream!</p>
+                </div>
+
+                <!-- Center: Big Total Summary Highlight -->
+                <div class="text-center bg-gradient-to-r from-lavender-600 to-purple-600 text-white p-5 rounded-2xl shadow-md">
+                    <p class="text-xs font-bold uppercase tracking-widest text-lavender-200">Total Savings Accumulated</p>
+                    <p id="footer-total-savings" class="text-3xl sm:text-4xl font-extrabold mt-1 tracking-tight">₱0</p>
+                    <p class="text-xs text-lavender-100 mt-1">Goal: ₱5,000.00</p>
+                </div>
+
+                <!-- Right: Start & Finish Dates -->
+                <div class="bg-white p-4 rounded-2xl border-2 border-lavender-200 shadow-sm space-y-3">
+                    <div>
+                        <label for="start-date" class="block text-xs font-bold uppercase tracking-wider text-lavender-600 mb-1">Start Date:</label>
+                        <input type="date" id="start-date" class="w-full bg-lavender-50 border border-lavender-200 rounded-lg px-3 py-1.5 text-sm font-semibold text-lavender-800 focus:outline-none focus:ring-2 focus:ring-lavender-500">
+                    </div>
+                    <div>
+                        <label for="finish-date" class="block text-xs font-bold uppercase tracking-wider text-lavender-600 mb-1">Target Finish Date:</label>
+                        <input type="date" id="finish-date" class="w-full bg-lavender-50 border border-lavender-200 rounded-lg px-3 py-1.5 text-sm font-semibold text-lavender-800 focus:outline-none focus:ring-2 focus:ring-lavender-500">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright / Creator Note -->
+            <div class="mt-8 text-center text-xs text-lavender-400 font-medium">
+                ₱5,000 Ipon Challenge Web App • Designed with 💜 for your financial goals
+            </div>
+        </footer>
+
+    </div>
+
+    <div id="custom-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-3xl p-6 max-w-sm w-full shadow-2xl border-4 border-lavender-200 text-center transform scale-95 transition-transform duration-300" id="modal-content">
+            <div class="w-16 h-16 bg-lavender-100 text-lavender-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                ⚠️
+            </div>
+            <h3 id="modal-title" class="text-xl font-bold text-lavender-900 mb-2">Reset Challenge?</h3>
+            <p id="modal-message" class="text-sm text-lavender-600 mb-6">Are you sure you want to reset all your savings progress? This action cannot be undone.</p>
+            <div class="flex gap-3 justify-center">
+                <button id="modal-cancel-btn" class="flex-1 bg-lavender-100 hover:bg-lavender-200 text-lavender-700 font-bold py-2.5 px-4 rounded-xl transition">
+                    Cancel
+                </button>
+                <button id="modal-confirm-btn" class="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-4 rounded-xl shadow-md transition">
+                    Yes, Reset
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const TOTAL_SLOTS = 100;
+            const AMOUNT_PER_SLOT = 50;
+            const STORAGE_KEY = 'ipon_challenge_5000_data_v1';
+
+            // State management
+            let state = {
+                checked: Array(TOTAL_SLOTS).fill(false),
+                startDate: '',
+                finishDate: ''
+            };
+
+            // DOM Elements
+            const gridContainer = document.getElementById('grid-container');
+            const totalSavingsText = document.getElementById('total-savings-text');
+            const footerTotalSavings = document.getElementById('footer-total-savings');
+            const checkedCountText = document.getElementById('checked-count');
+            const progressPercentage = document.getElementById('progress-percentage');
+            const progressBarFill = document.getElementById('progress-bar-fill');
+            const completionStatusText = document.getElementById('completion-status-text');
+            const startDateInput = document.getElementById('start-date');
+            const finishDateInput = document.getElementById('finish-date');
+            const resetBtn = document.getElementById('reset-btn');
+            const markAllBtn = document.getElementById('mark-all-btn');
+
+            // Modal Elements
+            const customModal = document.getElementById('custom-modal');
+            const modalContent = document.getElementById('modal-content');
+            const modalCancelBtn = document.getElementById('modal-cancel-btn');
+            const modalConfirmBtn = document.getElementById('modal-confirm-btn');
+
+            // Load from localStorage
+            function loadState() {
+                try {
+                    const saved = localStorage.getItem(STORAGE_KEY);
+                    if (saved) {
+                        const parsed = JSON.parse(saved);
+                        if (parsed.checked && Array.isArray(parsed.checked)) {
+                            state.checked = parsed.checked;
+                        }
+                        if (parsed.startDate) state.startDate = parsed.startDate;
+                        if (parsed.finishDate) state.finishDate = parsed.finishDate;
+                    }
+                } catch (e) {
+                    console.error('Error loading saved data:', e);
+                }
+                startDateInput.value = state.startDate;
+                finishDateInput.value = state.finishDate;
+            }
+
+            // Save to localStorage
+            function saveState() {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+                } catch (e) {
+                    console.error('Error saving data:', e);
+                }
+            }
+
+            // Render the 100 circles
+            function renderGrid() {
+                gridContainer.innerHTML = '';
+                for (let i = 0; i < TOTAL_SLOTS; i++) {
+                    const isChecked = state.checked[i];
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.dataset.index = i;
+                    
+                    // Base styling matching the pastel lavender theme
+                    let baseClasses = "w-full aspect-square rounded-full flex flex-col items-center justify-center font-bold text-sm sm:text-base transition-all duration-200 select-none shadow-sm border-2 relative group ";
+                    
+                    if (isChecked) {
+                        baseClasses += "bg-lavender-600 text-white border-lavender-700 shadow-md transform scale-95 ring-2 ring-lavender-300";
+                    } else {
+                        baseClasses += "bg-white text-lavender-800 border-lavender-200 hover:border-lavender-400 hover:bg-lavender-50 hover:scale-105";
+                    }
+
+                    btn.className = baseClasses;
+
+                    // Content inside circle: number or checkmark icon when checked
+                    if (isChecked) {
+                        btn.innerHTML = `
+                            <span class="text-xs font-extrabold leading-none">✓</span>
+                            <span class="text-[10px] opacity-80 leading-none mt-0.5">${i + 1}</span>
+                        `;
+                    } else {
+                        btn.textContent = i + 1;
+                    }
+
+                    // Click event listener
+                    btn.addEventListener('click', () => {
+                        toggleCircle(i);
+                    });
+
+                    gridContainer.appendChild(btn);
+                }
+                updateStats();
+            }
+
+            // Toggle individual circle
+            function toggleCircle(index) {
+                state.checked[index] = !state.checked[index];
+                saveState();
+                renderGrid();
+
+                // Check if completed 100%
+                if (state.checked.every(Boolean)) {
+                    triggerConfetti();
+                }
+            }
+
+            // Update statistics and UI progress bars
+            function updateStats() {
+                const checkedCount = state.checked.filter(Boolean).length;
+                const totalAmount = checkedCount * AMOUNT_PER_SLOT;
+                const percentage = Math.round((checkedCount / TOTAL_SLOTS) * 100);
+
+                totalSavingsText.textContent = `₱${totalAmount.toLocaleString()}`;
+                footerTotalSavings.textContent = `₱${totalAmount.toLocaleString()}`;
+                checkedCountText.textContent = checkedCount;
+                progressPercentage.textContent = `${percentage}%`;
+                progressBarFill.style.width = `${percentage}%`;
+
+                if (checkedCount === TOTAL_SLOTS) {
+                    completionStatusText.textContent = "🎉 Incredible! You've completed your ₱5,000 goal!";
+                    completionStatusText.className = "text-xs font-bold text-purple-600 mt-1 animate-bounce";
+                } else if (checkedCount > 0) {
+                    completionStatusText.textContent = `Great progress! ${100 - checkedCount} slots left to go!`;
+                    completionStatusText.className = "text-xs font-medium text-lavender-600 mt-1";
+                } else {
+                    completionStatusText.textContent = "Every peso saved is a step closer to your dream!";
+                    completionStatusText.className = "text-xs font-medium text-lavender-600 mt-1";
+                }
+            }
+
+            // Confetti effect on completion
+            function triggerConfetti() {
+                if (typeof confetti === 'function') {
+                    confetti({
+                        particleCount: 120,
+                        spread: 80,
+                        origin: { y: 0.6 },
+                        colors: ['#9333ea', '#c084fc', '#e9d5ff', '#ec4899', '#f472b6']
+                    });
+                }
+            }
+
+            // Modal controls
+            function showModal() {
+                customModal.classList.remove('hidden');
+                setTimeout(() => {
+                    customModal.classList.remove('opacity-0');
+                    modalContent.classList.remove('scale-95');
+                }, 10);
+            }
+
+            function hideModal() {
+                customModal.classList.add('opacity-0');
+                modalContent.classList.add('scale-95');
+                setTimeout(() => {
+                    customModal.classList.add('hidden');
+                }, 300);
+            }
+
+            // Event Listeners for Dates
+            startDateInput.addEventListener('change', (e) => {
+                state.startDate = e.target.value;
+                saveState();
+            });
+
+            finishDateInput.addEventListener('change', (e) => {
+                state.finishDate = e.target.value;
+                saveState();
+            });
+
+            // Reset Button click
+            resetBtn.addEventListener('click', () => {
+                showModal();
+            });
+
+            modalCancelBtn.addEventListener('click', () => {
+                hideModal();
+            });
+
+            modalConfirmBtn.addEventListener('click', () => {
+                state.checked = Array(TOTAL_SLOTS).fill(false);
+                saveState();
+                renderGrid();
+                hideModal();
+            });
+
+            // Fill All Button
+            markAllBtn.addEventListener('click', () => {
+                state.checked = Array(TOTAL_SLOTS).fill(true);
+                saveState();
+                renderGrid();
+                triggerConfetti();
+            });
+
+            // Initial load
+            loadState();
+            renderGrid();
+        });
+    </script>
+</body>
+</html>
